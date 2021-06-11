@@ -1,10 +1,25 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
-    stages {
-        stage('build') {
+    agent any
+
+  
+
+    stages("build") {
+        
             steps {
-                sh 'mvn --version'
+               echo 'bulding the application'
             }
         }
-    }
-}
+    stages("test") {
+        
+            steps {
+               echo 'test the application'
+            }
+        }   
+        stages("debloy") {
+        
+            steps {
+               echo 'debloy the application'
+            }
+        }
+        }
+        }
